@@ -41,13 +41,18 @@ unittest_teardown()
 
 unittest(test_constants)
 {
-  assertEqual(1, 1);
+  assertEqual(L9110_STOP   , 0x00);
+  assertEqual(L9110_REVERSE, 0x01);
+  assertEqual(L9110_FORWARD, 0x02);
 }
 
 
 unittest(test_constructor)
 {
-  L9110 obj;
+  L9110 obj(6, 7);
+  
+  obj.begin();
+  assertEqual(L9110_STOP   , obj.status());
 }
 
 

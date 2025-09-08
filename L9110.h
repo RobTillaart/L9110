@@ -2,9 +2,9 @@
 //
 //    FILE: L9110.h
 //  AUTHOR: Rob Tillaart
-//    DATE: 2025-00-00
+//    DATE: 2025-09-08
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for
+// PURPOSE: Arduino library for L9110 motor driver.
 //     URL: https://github.com/RobTillaart/L9110
 //
 //  Motor driver chip on de propeller

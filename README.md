@@ -21,7 +21,7 @@ Arduino library for L9110 motor driver.
 This library is to use L9110 motor driver.
 
 The L9110 is a simple motor driver which only allows forward or reverse.
-For this it uses two pins of which only one can be HIGH. 
+For this it uses two pins of which only one can be HIGH.
 If both are LOW or both are HIGH the motor stops.
 
 In this library these pins are named forwardPin and reversePin.
@@ -29,7 +29,7 @@ The library provides a simple class to switch between the three states
 and a function to read the state.
 
 The library was written for some small tests and might be useful for
-other applications. There are some ideas to extend it (on request).
+other applications. There are some ideas to extend it.
 
 Read the datasheet for details
 
@@ -102,9 +102,9 @@ to prevent soldering (again).
 - **void stop()** stops the motor.
 - **uint8_t status()** returns status, see table below.
 
-|  value  |  define         |
-|:-------:|:----------------|
-|    0    |  L9110_STOP     |
+|  value  |  define         |  notes  |
+|:-------:|:----------------|:-------:|
+|    0    |  L9110_STOP     |  default start after begin().
 |    1    |  L9110_REVERSE  |
 |    2    |  L9110_FORWARD  |
 
@@ -130,13 +130,22 @@ TODO
 #### Could
 
 - implement PWM interface
-  - a first test worked (not for low PWM values) however it is not included in the library 
+  - a first test worked (not for low PWM values) however it is not included in the library
     as there were some effects I did not understood / investigate.
   - would allow "speed adjustments", e.g. void forward(uint8_t speed);
   - only PWM pins allowed, TODO how to handle "non PWM pins"
+- counters
+  - how long it runs? wear indication?
+  - how often switched?
+- examples
+  - combination with e.g. ACS712/INA228 to measure motor current.
+- direction / enable API
+  - seen on other devices, separate class?
 
 
 #### Wont
+
+- performance measurements as code is much faster than motor inertia.
 
 
 ## Support
